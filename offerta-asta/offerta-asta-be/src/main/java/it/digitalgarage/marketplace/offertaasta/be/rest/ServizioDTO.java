@@ -15,21 +15,11 @@ public class ServizioDTO {
 		super();
 		this.prezzoFissato=0;
 	}
-	/*public ServizioDTO(String descrizione, String tipoServizio, String dataInizio, String dataFine, int prezzoMassimo,
-			String via, int prezzoFissato) {
-		super();
-		this.descrizione = descrizione;
-		this.tipoServizio = tipoServizio;
-		this.dataInizio = dataInizio;
-		this.dataFine = dataFine;
-		this.prezzoMassimo = prezzoMassimo;
-		this.prezzoFissato=0;
-		//this.descrizione = descrizione;
-	}*/
+	
 	
 	public ServizioDTO(ServizioDTO a) {
 		super();
-		//this=a;
+		
 		this.descrizione = a.getDescrizione();
 		this.tipoServizio = a.getTipoServizio();
 		this.dataInizio = a.getDataFine();

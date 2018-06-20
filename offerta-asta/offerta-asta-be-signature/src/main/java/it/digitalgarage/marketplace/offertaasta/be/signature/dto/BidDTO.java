@@ -7,6 +7,7 @@ public class BidDTO {
 	private long auctionOid;
 	private long auctionVersion;
 	private BigDecimal price;
+	
 	public long getAuctionOid() {
 		return auctionOid;
 	}

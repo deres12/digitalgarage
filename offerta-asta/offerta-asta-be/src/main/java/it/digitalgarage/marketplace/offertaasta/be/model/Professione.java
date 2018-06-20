@@ -3,15 +3,15 @@ package it.digitalgarage.marketplace.offertaasta.be.model;
 import java.util.List;
 
 public class Professione {
-	private String professione;
+	private String nome;
 	//private String servizio;
 	private List<ServizioOfferto> tipiServizi;
 	
-	public String getProfessione() {
-		return professione;
+	public String getNome() {
+		return nome;
 	}
-	public void setProfessione(String professione) {
-		this.professione = professione;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	public List<ServizioOfferto> getTipiServizi() {
 		return tipiServizi;
