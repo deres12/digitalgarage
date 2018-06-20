@@ -1,6 +1,6 @@
 package it.digitalgarage.marketplace.offertaasta.be.model;
 
-public class Venditore extends User {
+public class Fornitore extends User {
 	
 	private int valutazione;
 	private String descrizione;
