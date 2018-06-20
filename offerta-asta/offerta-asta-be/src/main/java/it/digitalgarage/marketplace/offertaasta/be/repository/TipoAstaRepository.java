@@ -6,8 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import it.digitalgarage.marketplace.offertaasta.be.model.TipoAsta;
 
-
 @Repository
-public interface TipoAstaRepository extends JpaRepository<TipoAsta, String>,JpaSpecificationExecutor<TipoAsta>{
+public interface TipoAstaRepository extends JpaRepository<TipoAsta, String>, JpaSpecificationExecutor<TipoAsta> {
 
 }

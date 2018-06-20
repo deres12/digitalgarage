@@ -1,9 +1,4 @@
 package it.digitalgarage.marketplace.offertaasta.be.model;
-/**
- * 
- * @author Giancarlo Compagno
- * 
- */
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -12,28 +7,23 @@ import javax.persistence.Table;
 @Entity
 public class Supplier extends User {
 
-	
 	private String info;
-	
-	public Supplier(){
-		
+
+	public Supplier() {
+
 	}
-	
+
 	public String getInfo() {
 		return info;
 	}
-	
+
 	public void setInfo(String info) {
 		this.info = info;
 	}
-	
 
 	@Override
 	public String toString() {
-		return "Supplier [User=" + super.toString() + ", getInfo()=" + getInfo() + super.toString() + "]";
+		return "Supplier [User=" + super.toString() + ", info=" + getInfo() + super.toString() + "]";
 	}
-	
-	
-	
-	
+
 }

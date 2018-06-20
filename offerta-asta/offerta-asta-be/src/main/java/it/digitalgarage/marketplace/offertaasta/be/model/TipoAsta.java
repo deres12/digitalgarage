@@ -1,40 +1,34 @@
 package it.digitalgarage.marketplace.offertaasta.be.model;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 
 /**
  * The persistent class for the TIPO_CANONE database table.
  * 
  */
 @Entity
-@Table(name="TIPO_ASTA")
+@Table(name = "TIPO_ASTA")
 public class TipoAsta {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="COD_TIPO_ASTA")
+	@Column(name = "COD_TIPO_ASTA")
 	private String codice;
 
-	@Column(name="DESCRIZIONE")
+	@Column(name = "DESCRIZIONE")
 	private String descrizione;
 
 	public TipoAsta() {
 	}
 
-	
-	
 	public TipoAsta(String codice, String descrizione) {
 		super();
 		this.codice = codice;
 		this.descrizione = descrizione;
 	}
-
-
 
 	public String getCodice() {
 		return this.codice;
