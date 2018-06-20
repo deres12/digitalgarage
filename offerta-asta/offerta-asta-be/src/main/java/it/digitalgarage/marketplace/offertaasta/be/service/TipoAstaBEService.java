@@ -34,7 +34,6 @@ public class TipoAstaBEService implements TipoAstaBE {
 	@Override
 	public void delete(String id) throws NotDeletedException {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override

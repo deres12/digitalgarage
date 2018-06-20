@@ -30,58 +30,52 @@ import it.digitalgarage.marketplace.offertaasta.be.signature.dto.BidDTO;
 @Service
 @Transactional
 public class AuctionPartecipationBEService implements AuctionPartecipationBE {
-	
+
 	@Autowired
 	AuctionRepository auctionRepository;
-	
+
 	@Autowired
 	UserRepository userRepository;
 
 	@Override
 	public PageAuctionDTO search(AuctionSearchDTO example) {
-		Map<String,String> m = new HashMap<>();
+		Map<String, String> m = new HashMap<>();
 		m.put("description", "description");
 		m.put("title", "title");
 
-
-
-		org.springframework.data.domain.Pageable pageable = QBEUtils.makePageable(example,(list)->{
-			return list.stream().filter((k)->m.containsKey(k)).map((e)->m.get(e)).collect(Collectors.toList());
+		org.springframework.data.domain.Pageable pageable = QBEUtils.makePageable(example, (list) -> {
+			return list.stream().filter((k) -> m.containsKey(k)).map((e) -> m.get(e)).collect(Collectors.toList());
 		});
 		MakeSpecification<Auction> makeSpecification = QBEUtils.makeSpecification(Auction.class);
-		
-		makeSpecification
-				.like("title",example.getTitle())
-				.like("description",example.getDescription())
-				;
-		if(example.isActive()){
-			makeSpecification.
-				lte("startAuction", new Timestamp(System.currentTimeMillis())).
-				gte("endAuction", new Timestamp(System.currentTimeMillis()));
+
+		makeSpecification.like("title", example.getTitle()).like("description", example.getDescription());
+		if (example.isActive()) {
+			makeSpecification.lte("startAuction", new Timestamp(System.currentTimeMillis())).gte("endAuction",
+					new Timestamp(System.currentTimeMillis()));
 		}
 
 		Specification<Auction> spec = makeSpecification.get();
-		
+
 		org.springframework.data.domain.Page<Auction> es = auctionRepository.findAll(spec, pageable);
-		
-		return  new PageAuctionDTO(QBEUtils.makePage(es, (entity)->{
+
+		return new PageAuctionDTO(QBEUtils.makePage(es, (entity) -> {
 			return ConverterUtils.convert(entity, AuctionDTO.class);
 		}));
 	}
 
 	@Override
 	public AuctionFullDTO add(BidDTO bidDTO) {
-		
+
 		Long oidAuction = bidDTO.getAuctionOid();
 		Long versionAuction = bidDTO.getAuctionVersion();
 		List<Auction> auctions = auctionRepository.find(oidAuction, versionAuction);
-		if(!auctions.isEmpty()){
+		if (!auctions.isEmpty()) {
 			Auction auction = auctions.get(0);
 			User user = userRepository.getOne(MarketplaceSecurityContext.getUsername());
-			Bid bid = new Bid(user,bidDTO.getPrice());
+			Bid bid = new Bid(user, bidDTO.getPrice());
 			auction.addBid(bid);
 			auctionRepository.save(auction);
-		}else{
+		} else {
 			throw new AddBidNotValidException("Version auction is not valid");
 		}
 		return load(bidDTO.getAuctionOid());
@@ -89,7 +83,8 @@ public class AuctionPartecipationBEService implements AuctionPartecipationBE {
 
 	@Override
 	public AuctionFullDTO load(Long oid) {
-		return ConverterUtils.convert(auctionRepository.getOne(oid), AuctionFullDTO.class,new ConverterUtils.ImageConverter());
+		return ConverterUtils.convert(auctionRepository.getOne(oid), AuctionFullDTO.class,
+				new ConverterUtils.ImageConverter());
 	}
 
 }

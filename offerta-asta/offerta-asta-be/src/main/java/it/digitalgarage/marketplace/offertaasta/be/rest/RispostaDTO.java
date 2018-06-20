@@ -1,36 +1,24 @@
 package it.digitalgarage.marketplace.offertaasta.be.rest;
-public class RispostaDTO{
-		
-		private String messaggio;
-		
-		
-		public RispostaDTO() {
-			// TODO Auto-generated constructor stub
-		}
-		
-		
-				
-				
-		public RispostaDTO(String messaggio) {
-	super();
-	this.messaggio = messaggio;
-}
 
+public class RispostaDTO {
 
+	private String messaggio;
 
-
-		public String getMessaggio() {
-			return messaggio;
-		}
-
-		public void setMessaggio(String messaggio) {
-			this.messaggio = messaggio;
-		}
-		
-		
-		
-		
-		
-		
+	public RispostaDTO() {
 		
 	}
+
+	public RispostaDTO(String messaggio) {
+		super();
+		this.messaggio = messaggio;
+	}
+
+	public String getMessaggio() {
+		return messaggio;
+	}
+
+	public void setMessaggio(String messaggio) {
+		this.messaggio = messaggio;
+	}
+
+}

@@ -11,30 +11,29 @@ import javax.persistence.TemporalType;
 
 @Table
 @Entity
-public class Security extends AEntity<String>{
-	
+public class Security extends AEntity<String> {
+
 	@Id
 	private String username;
-	
+
 	private String password;
-	
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	
+
 	public String getUsername() {
 		return username;
 	}
-	
+
 	public String getPassword() {
 		return password;
 	}
-	
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
+
 	@Override
 	public String getOid() {
 		return getUsername();

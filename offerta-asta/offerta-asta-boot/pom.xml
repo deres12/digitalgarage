@@ -1,36 +1,32 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>it.digitalgarage.marketplace</groupId>
-    <artifactId>offerta-asta</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <artifactId>offerta-asta-boot</artifactId>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>it.digitalgarage.marketplace</groupId>
+		<artifactId>offerta-asta</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>offerta-asta-boot</artifactId>
 	<properties>
 		<start-class>it.digitalgarage.marketplace.offertaasta.boot.OffertaAstaStart</start-class>
 	</properties>
-  <dependencies>
-  	<dependency>
-  		<groupId>it.digitalgarage.marketplace</groupId>
-  		<artifactId>commons-tomcat</artifactId>
-  		<version>${project.version}</version>
-  	</dependency>
- <!--   	<dependency>
-  		<groupId>it.digitalgarage.marketplace</groupId>
-  		<artifactId>commons-swagger</artifactId>
-  		<version>${project.version}</version>
-   	</dependency>
-	<dependency>
-  		<groupId>it.digitalgarage.marketplace</groupId>
-  		<artifactId>commons-keycloak</artifactId>
-  		<version>${project.version}</version>
-  	</dependency> -->
-  	<dependency>
-  		<groupId>it.digitalgarage.marketplace</groupId>
-  		<artifactId>offerta-asta-be</artifactId>
-  		<version>${project.version}</version>
-  	</dependency>	    
-  </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>it.digitalgarage.marketplace</groupId>
+			<artifactId>commons-tomcat</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<!-- <dependency> <groupId>it.digitalgarage.marketplace</groupId> <artifactId>commons-swagger</artifactId> 
+			<version>${project.version}</version> </dependency> <dependency> <groupId>it.digitalgarage.marketplace</groupId> 
+			<artifactId>commons-keycloak</artifactId> <version>${project.version}</version> 
+			</dependency> -->
+		<dependency>
+			<groupId>it.digitalgarage.marketplace</groupId>
+			<artifactId>offerta-asta-be</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>

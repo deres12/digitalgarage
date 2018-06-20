@@ -13,8 +13,8 @@ import it.digitalgarage.marketplace.offertaasta.be.signature.dto.TipoAstaDTO;
 import it.digitalgarage.marketplace.offertaasta.be.signature.dto.TipoAstaSearchDTO;
 
 @RestController
-@RequestMapping({"/tipoAsta"})
-public class TipoAstaBEController implements TipoAstaBE{
+@RequestMapping({ "/tipoAsta" })
+public class TipoAstaBEController implements TipoAstaBE {
 
 	@Autowired
 	@Qualifier("tipoAstaBEService")
