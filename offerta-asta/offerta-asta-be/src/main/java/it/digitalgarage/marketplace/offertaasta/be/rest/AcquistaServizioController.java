@@ -23,5 +23,21 @@ public class AcquistaServizioController {
 		}*/
 		
 	}
+	
+	
+	@ResponseBody
+	@RequestMapping(value="/posizione",method=RequestMethod.POST)
+	public ResponseEntity<ServizioDTO> trovaPos(@RequestBody ServizioDTO dto){
+		return new ResponseEntity<>(new ServizioDTO(dto),HttpStatus.OK);
+		/*if(dto.getNome()!=null){
+			return new ResponseEntity<>(new ServizioDTO(dto),HttpStatus.OK);
+		}else{
+			return new ResponseEntity<>(new ServizioDTO(dto),HttpStatus.BAD_REQUEST);
+		}*/
+		
+	}
+	
+	
+	
 
 }

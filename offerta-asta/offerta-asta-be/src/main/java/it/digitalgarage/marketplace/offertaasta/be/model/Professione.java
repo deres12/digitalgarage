@@ -6,6 +6,7 @@ public class Professione {
 	private String professione;
 	//private String servizio;
 	private List<ServizioOfferto> tipiServizi;
+	
 	public String getProfessione() {
 		return professione;
 	}
